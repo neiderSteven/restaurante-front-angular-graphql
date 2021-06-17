@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Órdenes</h4>
+                        <p class="card-category"> Registro de órdenes del restaurante</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Usuario
+                                    </th>
+                                    <th>
+                                        Menú
+                                    </th>
+                                    <th>
+                                        Descripción
+                                    </th>
+                                    <th>
+                                        Preparado
+                                    </th>
+                                    <th>
+                                        Cancelado
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let orden of ordenes">
+                                        <td width="22%">
+                                            {{orden.usuario.nombre}}
+                                        </td>
+                                        <td>
+                                            <div *ngFor="let menu of orden.menu">- {{menu.nombre}}</div>
+                                        </td>
+                                        <td width="22%">
+                                            {{orden.descripcion}}
+                                        </td>
+                                        <td width="22%">
+                                            {{orden.estado_preparacion}}
+                                        </td>
+                                        <td width="22%">
+                                            {{orden.estado_pago}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
